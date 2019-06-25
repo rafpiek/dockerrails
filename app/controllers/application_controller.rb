@@ -5,7 +5,17 @@ class ApplicationController < ActionController::API
   end
 
   def sample
-    kotarba = 'rulez'
+    kotarba = 'Kotarba maćmmmmmmmm'
+    
     render json: { message: 'This is sample message on route lalala ' + kotarba  }
+  end
+
+  def cars
+    cars = Car.all
+    response = {
+      carsCount: cars.size,
+      cars: cars
+    }
+    render json: response, status: :ok
   end
 end
